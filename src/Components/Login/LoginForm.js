@@ -35,9 +35,11 @@ function LoginForm() {
         )}
         <Error error={error} />
       </form>
+
       <Link className={style.perdeu} to="/login/perdeu">
         Esqueceu a Senha?
       </Link>
+
       <div className={style.cadastro}>
         <h2 className={style.subtitle}>Cadastre-se</h2>
         <p>Ainda não possui conta? Cadastre-se no site.</p>
