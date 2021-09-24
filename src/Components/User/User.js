@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate, Route, Routes } from "react-router";
 import { UserContext } from "../../UserContext";
 import Feed from "../Feed/Feed";
+import Page404 from "../Page404";
 import UserHeader from "./UserHeader";
 import UserPhotoPost from "./UserPhotoPost";
 import UserStats from "./UserStats";
@@ -17,6 +18,7 @@ function User() {
         <Route path="/" element={<Feed user={data.id} />} />
         <Route path="postar" element={<UserPhotoPost />} />
         <Route path="estatisticas" element={<UserStats />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </section>
   );

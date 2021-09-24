@@ -11,7 +11,7 @@ function FeedPhotos({ setModalPhoto, user, page, setInfinite }) {
 
   React.useEffect(() => {
     async function fetchPhotos() {
-      const total = 3;
+      const total = 6; // Número de post para serem exibidos, se o camanho do array for menor, significa que não existem mais post para serem puxados pela api
 
       const { url, options } = PHOTOS_GET({ page, total, user });
       const { response, json } = await request(url, options);

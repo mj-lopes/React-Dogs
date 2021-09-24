@@ -1,11 +1,14 @@
 import React from "react";
 import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
+import propTypes from "prop-types";
 
 function Feed({ user }) {
   const [modalPhoto, setModalPhoto] = React.useState(null); // Serve para guardar o estado responsavel por armazenar os dados da foto atual clicada, para exibir no FeedModal;
   const [pages, setPages] = React.useState([1]);
   const [infinite, setInfinite] = React.useState(true);
+
+  // Funcao de scroll Infinito
   React.useEffect(() => {
     let wait = false;
 
@@ -49,8 +52,33 @@ function Feed({ user }) {
         />
       ))}
       {/* FeedPhotos, responsável por fazer o fetch e exibir a lista de dados/fotos */}
+
+      {!infinite && (
+        <p
+          style={{
+            textAlign: "center",
+            padding: "2rem 0 4rem 0",
+            color: "#888",
+          }}
+        >
+          Não existem mais postagens.
+        </p>
+      )}
     </div>
   );
 }
+
+// Default props e proptypes, para fazer um melhor controle do fetch dos dados
+
+Feed.defaultProps = {
+  user: 0,
+};
+
+Feed.propTypes = {
+  user: propTypes.oneOfType([
+    propTypes.string.isRequired,
+    propTypes.number.isRequired,
+  ]),
+};
 
 export default Feed;
