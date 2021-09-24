@@ -19,16 +19,28 @@
   }
 }
 
+.single.photo {
+  grid-template-columns: 1fr;
+  height: auto;
+}
+
 .detalhes {
   padding: 2rem 2rem 0 2rem;
+}
+
+.single .detalhes {
+  padding: 0;
+  padding-top: 1rem;
 }
 
 .img {
   grid-row: 1/4;
 }
 
-.comentarios {
-  padding: 0 2rem;
+.single .img {
+  grid-row: 1;
+  border-radius: 0.4rem;
+  overflow: hidden;
 }
 
 @media (max-width: 64rem) {
@@ -38,6 +50,12 @@
     overflow-y: auto;
     grid-template-columns: minmax(20rem, 40rem);
   }
+
+  .single.photo {
+    max-height: none;
+    overflow-y: none;
+  }
+
   .img {
     grid-row: 1;
   }
