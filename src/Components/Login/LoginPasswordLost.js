@@ -5,6 +5,7 @@ import useForm from "../../Hooks/useForm";
 import Button from "../Form/Button";
 import Input from "../Form/Input";
 import Error from "../Helper/Error";
+import Head from "../Helper/Head";
 
 function LoginPasswordLost() {
   const login = useForm();
@@ -23,6 +24,8 @@ function LoginPasswordLost() {
 
   return (
     <section>
+      <Head title="Perdeu a Senha" />
+
       <h1 className="title">Perdeu a senha?</h1>
 
       {data ? (

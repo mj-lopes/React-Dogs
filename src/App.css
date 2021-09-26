@@ -90,3 +90,14 @@ a {
     transform: translateX(0);
   }
 }
+
+/* MACETE PARA FORÇAR O FOOTER SEMPRE AO FINAL DA PÁGINA */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  flex: 1;
+}
