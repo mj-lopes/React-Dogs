@@ -19,19 +19,18 @@ Dogs é uma SPA de uma rede social para o compartilhamento e visualização de f
 
 <h2> Features 🐕</h2>
 
-- [x] Implementação da base
-- [x] Login
-- [x] Cadastro de usuários
-- [x] Feed de fotos
-- [x] Perfil user
-- [x] Cadastro de fotos
-- [x] Modal foto
-- [x] Comentários na foto do modal
-- [x] Page foto
-- [x] Feed usuário expecifico 
-- [x] Foto analytics 
-- [x] Recuperação de senha
-- [ ] Redux
+- Usuário
+  - Login
+  - Cadastro
+  - Recuperação de conta
+- Feed de fotos gerais
+- Perfil de usuário
+- Cadastro de fotos
+- Modal com foto expandida
+- Comentários na foto do modal
+- Página das fotos
+- Página e feed de usuários expecificos 
+- Foto analytics 
 
 <div align='center'> 
 <img src='https://user-images.githubusercontent.com/56007721/140632457-37e24230-c58b-4ba7-aa6c-446253a103e3.png'/ style="width: 520px;" />   <img src='https://user-images.githubusercontent.com/56007721/140632458-745d5763-a742-4d8f-af37-e3d03027b712.png' style="width: 220px;"/>
@@ -57,7 +56,7 @@ No cmd, gitbash ou terminal de preferência:
 $ git clone https://github.com/mj-lopes/React-Dogs 
 
 # Navegue para o diretório raiz do projeto
-$ cd dogs
+$ cd React-Dogs
 
 # Instale as dependências do projeto
 $ npm install
