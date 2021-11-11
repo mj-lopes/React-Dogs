@@ -13,8 +13,7 @@ Dogs é uma SPA de uma rede social para o compartilhamento e visualização de f
  <a href="#instalacao">Instalação</a> •
  <a href="#funcionando">Funcionando</a> •
  <a href="#tecnologias">Tecnologias</a> •   
- <a href="#autor">Autor</a> •
- <a href="#licenc-a">Licença</a> 
+ <a href="#autor">Autor</a> 
 </p>
 
 <h2> Features 🐕</h2>
@@ -27,7 +26,8 @@ Dogs é uma SPA de uma rede social para o compartilhamento e visualização de f
 - Perfil de usuário
 - Cadastro de fotos
 - Modal com foto expandida
-- Comentários na foto do modal
+- Comentários na foto
+- Contador de visualizações
 - Página das fotos
 - Página e feed de usuários expecificos 
 - Foto analytics 
@@ -90,3 +90,4 @@ As seguintes ferramentas foram usadas na construção deste projeto:
 [![Gmail Badge](https://img.shields.io/badge/-mlrj.junior%40gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mlrj.junior@gmail.com)](mailto:mlrj.junior@gmail.com)
 [![Linkedin Badge](https://img.shields.io/badge/-Marcos_Junior-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/mlrjunior/)](https://www.linkedin.com/in/mlrjunior/) 
 </p>
+
