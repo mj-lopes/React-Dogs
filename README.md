@@ -16,6 +16,11 @@ Dogs é uma SPA de uma rede social para o compartilhamento e visualização de f
  <a href="#autor">Autor</a> 
 </p>
 
+<div align='center'>
+	<h3>Status do Projeto</h3>
+	<p> 🚧 Em construção 🚧</p>
+</div>
+
 <h2> Features 🐕</h2>
 
 - Usuário
@@ -80,6 +85,9 @@ As seguintes ferramentas foram usadas na construção deste projeto:
 - [Victory](https://formidable.com/open-source/victory/)
 - [Figma](https://www.figma.com/ui-design-tool/)
 
+<h2> TODO? 📝 </h2>
+
+- [ ] Trocar context api por Redux
 
 <h2 id='autor'> Autor </h2>
 
