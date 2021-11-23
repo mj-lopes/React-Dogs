@@ -12,6 +12,7 @@ function Login() {
   const { data } = useSelector((state) => state.user);
 
   if (data) return <Navigate to="/conta" />;
+
   return (
     <section className={style.login}>
       <div className={style.forms}>

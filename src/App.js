@@ -4,7 +4,6 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
 import Login from "./Components/Login/Login";
-import { UserStorage } from "./UserContext";
 import User from "./Components/User/User";
 import ProtectedRoute from "./Components/Helper/ProtectedRoute";
 import "./App.css";
@@ -16,20 +15,18 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <UserStorage>
-          <Header />
-          <main className="AppBody">
-            <Routes>
-              <Route path="/" end element={<Home />} />
-              <Route path="login/*" element={<Login />} />
-              <Route path="foto/:id" element={<Photo />} />
-              <Route path="perfil/:user" element={<UserProfile />} />
-              <ProtectedRoute path="conta/*" element={<User />} />
-              <Route path="*" element={<Page404 />} />
-            </Routes>
-          </main>
-          <Footer />
-        </UserStorage>
+        <Header />
+        <main className="AppBody">
+          <Routes>
+            <Route path="/" end element={<Home />} />
+            <Route path="login/*" element={<Login />} />
+            <Route path="foto/:id" element={<Photo />} />
+            <Route path="perfil/:user" element={<UserProfile />} />
+            <ProtectedRoute path="/conta/*" element={<User />} />
+            <Route path="*" element={<Page404 />} />
+          </Routes>
+        </main>
+        <Footer />
       </BrowserRouter>
     </div>
   );

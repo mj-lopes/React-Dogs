@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import Feed from "../Feed/Feed";
 import Head from "../Helper/Head";
 import Page404 from "../Page404";
@@ -11,6 +11,7 @@ import UserStats from "./UserStats";
 function User() {
   const { data } = useSelector((state) => state.user);
 
+  if (!data) return <Navigate to="/login" />;
   return (
     <section className="container">
       <Head title="Minha Conta" />
