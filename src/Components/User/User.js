@@ -1,6 +1,6 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router";
-import { UserContext } from "../../UserContext";
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router";
 import Feed from "../Feed/Feed";
 import Head from "../Helper/Head";
 import Page404 from "../Page404";
@@ -9,8 +9,7 @@ import UserPhotoPost from "./UserPhotoPost";
 import UserStats from "./UserStats";
 
 function User() {
-  const { login, data } = React.useContext(UserContext);
-  if (login !== true) return <Navigate to="/login" />; // Protected router não está funcionando, então a verificação será feita ao tenta acessar o componente/page 'User'
+  const { data } = useSelector((state) => state.user);
 
   return (
     <section className="container">
