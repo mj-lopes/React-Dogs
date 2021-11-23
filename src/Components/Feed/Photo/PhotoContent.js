@@ -5,11 +5,11 @@ import Image from "../../Helper/Image";
 import PhotoComments from "./PhotoComments";
 import PhotoDelete from "./PhotoDelete";
 import style from "./PhotoContent.module.css";
+import { useSelector } from "react-redux";
 
-function PhotoContent({ data, single }) {
+function PhotoContent({ single }) {
   const user = React.useContext(UserContext);
-
-  const { photo, comments } = data;
+  const { photo, comments } = useSelector((state) => state.photo.data);
 
   return (
     <div className={`${style.photo} ${single ? style.single : ""}`}>
