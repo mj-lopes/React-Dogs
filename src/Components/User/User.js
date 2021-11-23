@@ -12,6 +12,7 @@ function User() {
   const { data } = useSelector((state) => state.user);
 
   if (!data) return <Navigate to="/login" />;
+
   return (
     <section className="container">
       <Head title="Minha Conta" />

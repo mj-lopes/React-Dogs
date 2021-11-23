@@ -10,8 +10,15 @@ import "./App.css";
 import Page404 from "./Components/Page404";
 import Photo from "./Components/Feed/Photo/Photo";
 import UserProfile from "./Components/User/UserProfile";
+import { useDispatch } from "react-redux";
+import { autoLogin } from "./Store/user";
 
 function App() {
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    dispatch(autoLogin());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <BrowserRouter>

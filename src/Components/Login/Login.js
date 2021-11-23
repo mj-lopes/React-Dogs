@@ -7,11 +7,13 @@ import LoginPasswordReset from "./LoginPasswordReset";
 import style from "./Login.module.css";
 import Page404 from "../Page404";
 import { useSelector } from "react-redux";
+import Loading from "../Helper/Loading";
 
 function Login() {
-  const { data } = useSelector((state) => state.user);
+  const { data, loading } = useSelector((state) => state.user);
 
   if (data) return <Navigate to="/conta" />;
+  if (loading) return <Loading />;
 
   return (
     <section className={style.login}>
