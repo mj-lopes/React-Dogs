@@ -2,11 +2,20 @@ import React from "react";
 import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
 import propTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import { loadNewPhotos, resetFeedState } from "../../Store/feed";
+import Loading from "../Helper/Loading";
+import Error from "../Helper/Error";
 
 function Feed({ user }) {
   const [modalPhoto, setModalPhoto] = React.useState(null); // Serve para guardar o estado responsavel por armazenar os dados da foto atual clicada, para exibir no FeedModal;
-  const [pages, setPages] = React.useState([1]);
-  const [infinite, setInfinite] = React.useState(true);
+  const { infinite, loading, list, error } = useSelector((state) => state.feed);
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(resetFeedState());
+    dispatch(loadNewPhotos({ user, total: 6 }));
+  }, [dispatch, user]);
 
   // Funcao de scroll Infinito
   React.useEffect(() => {
@@ -18,7 +27,7 @@ function Feed({ user }) {
         const height = document.body.offsetHeight - window.innerHeight;
 
         if (scroll > height * 0.75 && !wait) {
-          setPages((pages) => [...pages, pages.length + 1]);
+          dispatch(loadNewPhotos({ user, total: 6 }));
 
           wait = true;
           setTimeout(() => {
@@ -35,24 +44,17 @@ function Feed({ user }) {
       window.removeEventListener("scroll", infiniteScroll);
       window.removeEventListener("wheel", infiniteScroll);
     };
-  }, [infinite]);
+  }, [infinite, dispatch, user]);
 
   return (
     <div>
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}
-      {pages.map((page) => (
-        <FeedPhotos
-          key={page}
-          user={user}
-          page={page}
-          setModalPhoto={setModalPhoto}
-          setInfinite={setInfinite}
-        />
-      ))}
+      {list.length && <FeedPhotos setModalPhoto={setModalPhoto} />}
       {/* FeedPhotos, responsável por fazer o fetch e exibir a lista de dados/fotos */}
-
+      {loading && <Loading />}
+      {error && <Error error={error} />}
       {!infinite && (
         <p
           style={{
