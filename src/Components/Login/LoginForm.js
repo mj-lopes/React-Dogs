@@ -3,22 +3,28 @@ import { Link } from "react-router-dom";
 import useForm from "../../Hooks/useForm";
 import Button from "../Form/Button";
 import Input from "../Form/Input";
-import { UserContext } from "../../UserContext";
 import Error from "../Helper/Error";
 import style from "./LoginForm.module.css";
 import styleBtn from "../Form/Button.module.css";
 import Head from "../Helper/Head";
+import { useSelector, useDispatch } from "react-redux";
+import { userLogin } from "../../Store/user";
 
 function LoginForm() {
   const username = useForm();
   const password = useForm();
-  const { userLogin, error, loading } = React.useContext(UserContext);
+  const dispatch = useDispatch();
+
+  const { token, user } = useSelector((state) => state);
+  const loading = token.loading || user.loading;
+  const error = token.error || user.error;
 
   async function handleSubmit(event) {
     event.preventDefault();
-
     if (username.validate() && password.validate()) {
-      userLogin(username.value, password.value);
+      dispatch(
+        userLogin({ username: username.value, password: password.value }),
+      );
     }
   }
 
