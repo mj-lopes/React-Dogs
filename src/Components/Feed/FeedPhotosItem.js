@@ -1,10 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { fetchPhoto } from "../../Store/photo";
+import { openModal } from "../../Store/ui";
 import Image from "../Helper/Image";
 import style from "./FeedPhotosItem.module.css";
 
-function FeedPhotosItem({ photo, setModalPhoto }) {
+function FeedPhotosItem({ photo }) {
+  const dispatch = useDispatch();
+
   function handleClick() {
-    setModalPhoto(photo); // Ao clicar em uma li (foto), é mudado o estado de modalPhoto, e com isto, é aberto o modal para a exibição dos dados da foto clicada
+    dispatch(openModal());
+    dispatch(fetchPhoto(photo.id));
   }
 
   return (

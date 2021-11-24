@@ -8,7 +8,6 @@ import Loading from "../Helper/Loading";
 import Error from "../Helper/Error";
 
 function Feed({ user }) {
-  const [modalPhoto, setModalPhoto] = React.useState(null); // Serve para guardar o estado responsavel por armazenar os dados da foto atual clicada, para exibir no FeedModal;
   const { infinite, loading, list, error } = useSelector((state) => state.feed);
   const dispatch = useDispatch();
 
@@ -48,10 +47,9 @@ function Feed({ user }) {
 
   return (
     <div>
-      {modalPhoto && (
-        <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
-      )}
-      {list.length && <FeedPhotos setModalPhoto={setModalPhoto} />}
+      <FeedModal />
+
+      {list.length && <FeedPhotos />}
       {/* FeedPhotos, responsável por fazer o fetch e exibir a lista de dados/fotos */}
       {loading && <Loading />}
       {error && <Error error={error} />}
