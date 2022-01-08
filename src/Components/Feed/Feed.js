@@ -49,8 +49,7 @@ function Feed({ user }) {
     <div>
       <FeedModal />
 
-      {list.length && <FeedPhotos />}
-      {/* FeedPhotos, responsável por fazer o fetch e exibir a lista de dados/fotos */}
+      {list.length !== 0 && <FeedPhotos />}
       {loading && <Loading />}
       {error && <Error error={error} />}
       {!infinite && (
