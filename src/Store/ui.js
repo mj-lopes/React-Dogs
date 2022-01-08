@@ -10,7 +10,7 @@ const slice = createSlice({
       state.modal = true;
     },
     closeModal(state) {
-      state.modal = true;
+      state.modal = false;
     },
   },
 });
