@@ -18,7 +18,7 @@ Dogs é uma SPA de uma rede social para o compartilhamento e visualização de f
 
 <div align='center'>
 	<h3>Status do Projeto</h3>
-	<p> 🚧 Em construção 🚧</p>
+	<p> Concluido 🌟</p>
 </div>
 
 <h2> Features 🐕</h2>
