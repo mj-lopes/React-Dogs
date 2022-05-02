@@ -87,7 +87,7 @@ As seguintes ferramentas foram usadas na construção deste projeto:
 
 <h2> TODO? 📝 </h2>
 
-- [ ] Trocar context api por Redux
+- [x] Trocar context api por Redux
 
 <h2 id='autor'> Autor </h2>
 
